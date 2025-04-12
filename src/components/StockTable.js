@@ -2,7 +2,7 @@ import FetchButton from "./FetchButton";
 
 export default function StockTable({ id }) {
   return <div>
-    <table id="{ id }">
+    <table className="stock-table" id="{ id }">
       <thead>
         <tr>
           <th>Column header</th>
