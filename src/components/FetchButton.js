@@ -3,8 +3,8 @@ export default function FetchButton({ tableId }) {
     fetch('http://localhost:8000/items/5?q=somequery')
       .then(response => response.json())
       .then(json => {
-        let table = document.getElementById({ tableId });
-        table.html(json.q);
+        let table = document.getElementById(tableId);
+        table.innerHTML = json.q;
       });
   }
 
