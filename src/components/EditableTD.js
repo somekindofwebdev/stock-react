@@ -5,12 +5,12 @@ export default function EditableTD({ value, rowId, columnId, datasource }) {
 
   function handleClick() {
     let td = document.getElementById(rowId + '|' + columnId);
+    td.classList.add('editing');
     if (datasource) {
       fetch('http://localhost:8000/options/' + datasource)
         .then(response => response.json())
         .then(json => setOptions(json.options))
     }
-    td.classList.add('editing');
   }
 
   return (

@@ -5,7 +5,8 @@ import StockTable from './components/StockTable';
 function App() {
   return (
     <div className="App">
-        <StockTable />
+      <header>Stock List</header>
+      <StockTable />
     </div>
   );
 }

@@ -11,11 +11,17 @@ root.render(
   </React.StrictMode>
 );
 
+document.addEventListener('click', function (e) {
+  if (e.target.parentElement && e.target.parentElement.classList.contains('editing')) {
+    return;
+  }
+  const editing = document.getElementsByClassName('editing');
+  for (const element of editing) {
+    element.classList.remove('editing');
+  }
+})
+
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
-
-function test() {
-  console.log('test');
-}

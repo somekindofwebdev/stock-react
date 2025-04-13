@@ -1,3 +1,8 @@
+body {
+  background-color: #1e2129;
+  color: white;
+}
+
 .App {
   text-align: center;
 }
@@ -7,8 +12,15 @@
   pointer-events: none;
 }
 
+.App header {
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 4px;
+}
+
 .stock-table {
     width: 100%;
+    margin: 4rem 0;
 }
 
 .editable-td > :not(span) {
