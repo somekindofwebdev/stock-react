@@ -16,7 +16,7 @@ export default function EditableTD({ value, rowId, columnId, datasource }) {
   return (
     <td id={ rowId + '|' + columnId } className="editable-td" onClick={handleClick}>
       <span>{value}</span>
-      {datasource
+      {datasource && options
         ? <select>{ options.map((option, index) => (
           <option key={index} value={option[0]}>{option[1]}</option>
         )) }</select>
