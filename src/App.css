@@ -11,6 +11,18 @@
     width: 100%;
 }
 
+.editable-td > :not(span) {
+    display: none;
+}
+
+.editable-td.editing > :not(span) {
+    display: inline;
+}
+
+.editable-td.editing span {
+    display: none;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

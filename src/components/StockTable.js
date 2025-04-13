@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import EditableTD from './EditableTD';
 
 export default function StockTable({ id }) {
   const [headers, setHeaders] = useState([]);
@@ -31,7 +32,7 @@ export default function StockTable({ id }) {
         { dataRows.map((row, index) => (
           <tr key={index}>
             {row.map((dataPoint, dpIndex) => (
-              <td key={dpIndex}>{dataPoint}</td>
+              <EditableTD rowId={index} columnId={dpIndex} datasource={headers[dpIndex]} key={dpIndex} value={dataPoint} />
             ))}
           </tr>
         ))
