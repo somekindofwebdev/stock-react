@@ -1,20 +1,22 @@
 import { useState } from "react";
 
-export default function EditableTD({ value, rowId, columnId, datasource }) {
+export default function EditableTD({ value, rowId, columnId, datasource, filterTable }) {
   const [options, setOptions] = useState([]);
 
   function handleClick() {
     let td = document.getElementById(rowId + '|' + columnId);
     td.classList.add('editing');
+
+    // let ftQuery = filterTable ? ('/' + filterTable) : '';
     if (datasource) {
-      fetch('http://localhost:8000/options/' + datasource)
+      fetch('http://localhost:8000/options/' + datasource) // + ftQuery)
         .then(response => response.json())
         .then(json => setOptions(json.options))
     }
   }
 
   return (
-    <td id={ rowId + '|' + columnId } className="editable-td" onClick={handleClick}>
+    <td id={ rowId + '|' + columnId } className={ 'editable-td' + (value === '' ? 'editing' : '') } onClick={handleClick}>
       <span>{value}</span>
       {datasource && options
         ? <select>{ options.map((option, index) => (

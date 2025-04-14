@@ -19,6 +19,10 @@ export default function StockTable({ id }) {
     setDataRows(newData.data);
   }
 
+  function addRow() {
+    setDataRows([...dataRows, ['', '', '', '']]);
+  }
+
   return <>
     <table className="stock-table" id="{ id }">
       <thead>
@@ -39,6 +43,7 @@ export default function StockTable({ id }) {
         }
       </tbody>
     </table>
-    <button onClick={update}>Update</button>
+    <button onClick={update}>Refresh</button>
+    <button onClick={addRow}>Add Animal</button>
   </>;
 }

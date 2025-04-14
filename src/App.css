@@ -5,6 +5,7 @@ body {
 
 .App {
   text-align: center;
+  margin-top: 2rem;
 }
 
 .App-logo {
@@ -15,12 +16,28 @@ body {
 .App header {
     font-size: 2rem;
     font-weight: 600;
-    letter-spacing: 4px;
+    letter-spacing: 2px;
 }
 
 .stock-table {
-    width: 100%;
-    margin: 4rem 0;
+    width: 80%;
+    margin: 4rem auto;
+    padding: 1rem;
+    border: 2px solid white;
+    border-radius: 12px;
+    background-color: #1a1725;
+}
+
+.stock-table, button {
+    background-color: #1a1725;
+    color: white;
+}
+
+button {
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    margin: 0 0.5rem;
 }
 
 .editable-td > :not(span) {
