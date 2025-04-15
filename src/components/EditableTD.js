@@ -11,7 +11,7 @@ export default function EditableTD({ value, rowId, columnId, datasource, filterT
     if (datasource) {
       fetch('http://localhost:8000/options/' + datasource) // + ftQuery)
         .then(response => response.json())
-        .then(json => setOptions(json.options))
+        .then(json => setOptions(json))
     }
   }
 
@@ -20,7 +20,7 @@ export default function EditableTD({ value, rowId, columnId, datasource, filterT
       <span>{value}</span>
       {datasource && options
         ? <select>{ options.map((option, index) => (
-          <option key={index} value={option[0]}>{option[1]}</option>
+          <option key={index} value={option.id}>{option.value}</option>
         )) }</select>
         : <input type="text" placeholder={value}></input> }
     </td>

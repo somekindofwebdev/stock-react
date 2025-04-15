@@ -15,8 +15,8 @@ export default function StockTable({ id }) {
         }
         return json;
       });
-    setHeaders(newData.headers);
-    setDataRows(newData.data);
+    setHeaders(Object.keys(newData[0]));
+    setDataRows(newData);
   }
 
   function addRow() {
@@ -35,7 +35,7 @@ export default function StockTable({ id }) {
       <tbody>
         { dataRows.map((row, index) => (
           <tr key={index}>
-            {row.map((dataPoint, dpIndex) => (
+            {Object.values(row).map((dataPoint, dpIndex) => (
               <EditableTD rowId={index} columnId={dpIndex} datasource={headers[dpIndex]} key={dpIndex} value={dataPoint} />
             ))}
           </tr>
